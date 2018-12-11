@@ -1,6 +1,6 @@
 # Secure ID
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
+[![Build Status](https://travis-ci.org/lismore/SecureID.svg?branch=master)](https://travis-ci.org/lismore/SecureID)
 
 This blockchain based secure ID solution uses a verified identity with multi-factor authentication on web and mobile apps without a username, password, third-party authenticator, or physical hardware token. 
 
