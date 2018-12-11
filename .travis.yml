@@ -3,6 +3,7 @@ solution: SecureID.sln
 mono: none
 dotnet: 2.1.4
 
+
 install:
  - dotnet restore
 
