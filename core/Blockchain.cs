@@ -129,5 +129,16 @@ namespace SecureID.core
             PendingTransactions = new List<Transaction>();  
             CreateTransaction(new Transaction(null, minerAddress, Reward.Amount, null));
         } 
+
+        /// <summary>
+        /// This function gets the balance of the users secureId account
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        public decimal GetBalance(string address){
+
+            // :TODO
+            return 0;
+        }
     }
 }
