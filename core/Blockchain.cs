@@ -13,7 +13,7 @@ namespace SecureID.core
         public int MiningDifficulty { set; get; } = 1; 
 
         // a store for pending transactions
-        IList<Transaction> PendingTransactions = new List<Transaction>(); 
+        public IList<Transaction> PendingTransactions = new List<Transaction>(); 
 
         // This list of block objects will become our blockchain
         public IList<Block> SecureIdChain { set;  get; } 
@@ -48,7 +48,7 @@ namespace SecureID.core
         /// <summary>
         /// This method initializes the SecureIdChain
         /// </summary>
-        private void InitializeSecureIdChain()
+        public void InitializeSecureIdChain()
         {
             SecureIdChain = new List<Block>();  
         }

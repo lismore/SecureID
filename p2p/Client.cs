@@ -1,3 +1,9 @@
+using System;
+using System.Collections.Generic;
+using Newtonsoft.Json;
+using SecureID.core;
+using WebSocketSharp;
+
 namespace SecureID.p2p
 {
     /// <summary>
@@ -86,7 +92,7 @@ namespace SecureID.p2p
             {  
                 secureIdServers.Add(item.Key);  
             }  
-            return servers;  
+            return secureIdServers;  
         }  
   
         /// <summary>

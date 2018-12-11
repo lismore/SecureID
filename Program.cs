@@ -1,6 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
 using SecureID.core;
+using SecureID.p2p;
 
 namespace SecureID
 {
@@ -36,7 +37,7 @@ namespace SecureID
                 Server.Start();
             }
 
-            if (name != "darkmode")
+            if (username != "darkmode")
             {
                 Console.WriteLine($"Current username is the default {username}");
             }
@@ -67,7 +68,7 @@ namespace SecureID
         /// Display Menu method, prints the top level node menu
         /// </summary>
         /// <returns></returns>
-        public void DisplayMenu(){
+        public static void DisplayMenu(){
 
             Console.WriteLine("\n=========================");
             Console.WriteLine("1. Sync Node");
@@ -106,7 +107,7 @@ namespace SecureID
                         UserIdentity user = new UserIdentity("username",usernames, true, true);
                         
 
-                        SecureIdAsset.CreateTransaction(new Transaction(username, receiverName, int.Parse(1), user));
+                        SecureIdAsset.CreateTransaction(new Transaction(username, receiverName, int.Parse("1"), user));
                         SecureIdAsset.ProcessPendingTransactions(username);
 
                         Client.Broadcast(JsonConvert.SerializeObject(SecureIdAsset));
@@ -119,7 +120,7 @@ namespace SecureID
                     case 5:
 
                         Console.WriteLine("Exit");
-                       
+                       break;
 
                 }
 

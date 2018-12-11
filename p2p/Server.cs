@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using SecureID.core;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -49,7 +50,7 @@ namespace SecureID.p2p
                     newTransactions.AddRange(Program.SecureIdAsset.PendingTransactions);
     
                     p2pChain.PendingTransactions = newTransactions;  
-                    Program.SecureIdAsset = newChain;  
+                    Program.SecureIdAsset = p2pChain;  
                 }  
     
                 if (!isSynched)  
