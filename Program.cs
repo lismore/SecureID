@@ -21,7 +21,7 @@ namespace SecureID
             Console.WriteLine("Hello SecureID Blockchain!");
             var startTime = DateTime.Now;  
 
-            SecureIdAsset.InitializeSecureIdChain();
+            //SecureIdAsset.InitializeSecureIdChain();
 
             if (args.Length >= 1){
                 Port = int.Parse(args[0]);
@@ -42,26 +42,26 @@ namespace SecureID
                 Console.WriteLine($"Current username is the default {username}");
             }
 
-            DisplayMenu();
+            //DisplayMenu();
 
   
             //Blockchain secureIdAsset = new Blockchain(); 
 
-            // var user = new UserIdentity("Username", "Lismore", true, true);
+            var user = new UserIdentity("Username", "Lismore", true, true);
 
-            // secureIdAsset.CreateTransaction(new Transaction("Patrick", "Authenticator", 1, user)); 
+            SecureIdAsset.CreateTransaction(new Transaction("Patrick", "Authenticator", 1, user)); 
 
-            // secureIdAsset.ProcessPendingTransactions("LismoreNode");
+            SecureIdAsset.ProcessPendingTransactions("LismoreNode");
 
-            // System.Threading.Thread.Sleep(5000);
+            System.Threading.Thread.Sleep(5000);
             
-            //  secureIdAsset.ProcessPendingTransactions("LismoreNode2");
+             SecureIdAsset.ProcessPendingTransactions("LismoreNode2");
 
-            // Console.WriteLine(JsonConvert.SerializeObject(secureIdAsset, Formatting.Indented)); 
+            Console.WriteLine(JsonConvert.SerializeObject(SecureIdAsset, Formatting.Indented)); 
             
-            // var endTime = DateTime.Now;  
+            var endTime = DateTime.Now;  
             
-            // Console.WriteLine($"Duration: {endTime - startTime}");  
+            Console.WriteLine($"Duration: {endTime - startTime}");  
         }
 
         /// <summary>
