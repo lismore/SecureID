@@ -104,13 +104,22 @@ namespace SecureID
                         // set user id object
                         // TODO: expand UserIdentity object for full identity
                         // TODO: do a validation check with public/private keys before setting user object owner to true
-                        UserIdentity user = new UserIdentity("username",usernames, true, true);
+
+                        try{
+
+                            UserIdentity user = new UserIdentity("username",usernames, true, true);
                         
 
                         SecureIdAsset.CreateTransaction(new Transaction(username, receiverName, int.Parse("1"), user));
                         SecureIdAsset.ProcessPendingTransactions(username);
 
                         Client.Broadcast(JsonConvert.SerializeObject(SecureIdAsset));
+
+
+                        }catch(Exception err){
+                                Console.WriteLine(err.Message);
+                        }
+                        
 
                         break;
                     case 4:
