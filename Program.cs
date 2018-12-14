@@ -21,7 +21,7 @@ namespace SecureID
             Console.WriteLine("Hello SecureID Blockchain!");
             var startTime = DateTime.Now;  
 
-            //SecureIdAsset.InitializeSecureIdChain();
+            SecureIdAsset.InitializeSecureIdChain();
 
             if (args.Length >= 1){
                 Port = int.Parse(args[0]);
@@ -42,26 +42,26 @@ namespace SecureID
                 Console.WriteLine($"Current username is the default {username}");
             }
 
-            //DisplayMenu();
+            DisplayMenu();
 
   
             //Blockchain secureIdAsset = new Blockchain(); 
 
-            var user = new UserIdentity("Username", "Lismore", true, true);
+            // var user = new UserIdentity("Username", "Lismore", true, true);
 
-            SecureIdAsset.CreateTransaction(new Transaction("Patrick", "Authenticator", 1, user)); 
+            // secureIdAsset.CreateTransaction(new Transaction("Patrick", "Authenticator", 1, user)); 
 
-            SecureIdAsset.ProcessPendingTransactions("LismoreNode");
+            // secureIdAsset.ProcessPendingTransactions("LismoreNode");
 
-            System.Threading.Thread.Sleep(5000);
+            // System.Threading.Thread.Sleep(5000);
             
-             SecureIdAsset.ProcessPendingTransactions("LismoreNode2");
+            //  secureIdAsset.ProcessPendingTransactions("LismoreNode2");
 
-            Console.WriteLine(JsonConvert.SerializeObject(SecureIdAsset, Formatting.Indented)); 
+            // Console.WriteLine(JsonConvert.SerializeObject(secureIdAsset, Formatting.Indented)); 
             
-            var endTime = DateTime.Now;  
+            // var endTime = DateTime.Now;  
             
-            Console.WriteLine($"Duration: {endTime - startTime}");  
+            // Console.WriteLine($"Duration: {endTime - startTime}");  
         }
 
         /// <summary>
@@ -69,14 +69,6 @@ namespace SecureID
         /// </summary>
         /// <returns></returns>
         public static void DisplayMenu(){
-
-            Console.WriteLine("\n=========================");
-            Console.WriteLine("1. Sync Node");
-            Console.WriteLine("2. Create new account");
-            Console.WriteLine("3. Create a transaction");
-            Console.WriteLine("4. Display Blockchain");
-            Console.WriteLine("5. Exit");
-            Console.WriteLine("=========================\n");
 
             int selection = 0;
 
@@ -104,22 +96,13 @@ namespace SecureID
                         // set user id object
                         // TODO: expand UserIdentity object for full identity
                         // TODO: do a validation check with public/private keys before setting user object owner to true
-
-                        try{
-
-                            UserIdentity user = new UserIdentity("username",usernames, true, true);
+                        UserIdentity user = new UserIdentity("username",usernames, true, true);
                         
 
                         SecureIdAsset.CreateTransaction(new Transaction(username, receiverName, int.Parse("1"), user));
                         SecureIdAsset.ProcessPendingTransactions(username);
 
                         Client.Broadcast(JsonConvert.SerializeObject(SecureIdAsset));
-
-
-                        }catch(Exception err){
-                                Console.WriteLine(err.Message);
-                        }
-                        
 
                         break;
                     case 4:
@@ -132,7 +115,13 @@ namespace SecureID
                        break;
 
                 }
-
+                Console.WriteLine("\n=========================");
+                Console.WriteLine("1. Sync Node");
+                Console.WriteLine("2. Create new account");
+                Console.WriteLine("3. Create a transaction");
+                Console.WriteLine("4. Display Blockchain");
+                Console.WriteLine("5. Exit");
+                Console.WriteLine("\n=========================\n");
                 Console.WriteLine("Please select an action");
                 string action = Console.ReadLine();
                 selection = int.Parse(action);
