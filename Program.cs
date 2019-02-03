@@ -1,7 +1,7 @@
 ﻿using System;
 using Newtonsoft.Json;
-using SecureID.core;
 using SecureID.p2p;
+using SecureIdBlockchain.core;
 
 namespace SecureID
 {
@@ -15,10 +15,16 @@ namespace SecureID
         public static Client Client = new Client();
         public static Blockchain SecureIdAsset = new Blockchain();
         public static string username = "darkmode";
+        public static BlockchainCache ourCache = new BlockchainCache();
 
         static void Main(string[] args)
         {
             Console.WriteLine("Hello SecureID Blockchain!");
+            Console.WriteLine("");
+
+            Console.WriteLine(ourCache.GetName());
+
+
             var startTime = DateTime.Now;  
 
             SecureIdAsset.InitializeSecureIdChain();

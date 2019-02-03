@@ -1,4 +1,4 @@
-namespace SecureID.core
+namespace SecureIdBlockchain.core
 {
     /// <summary>
     /// This class represents the users infor object for Identity 

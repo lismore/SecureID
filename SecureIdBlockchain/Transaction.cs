@@ -1,4 +1,4 @@
-namespace SecureID.core
+namespace SecureIdBlockchain.core
 {
     /// <summary>
     /// This class represents a transaction on the SecureIdChain

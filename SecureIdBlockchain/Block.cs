@@ -4,7 +4,7 @@ using System.Security.Cryptography;
 using System.Text;
 using Newtonsoft.Json;
 
-namespace SecureID.core
+namespace SecureIdBlockchain.core
 {
     /// <summary>
     /// This class represents a Block on the Blockchain

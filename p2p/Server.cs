@@ -1,5 +1,5 @@
 using Newtonsoft.Json;
-using SecureID.core;
+using SecureIdBlockchain.core;
 using System;
 using System.Collections.Generic;
 using System.Text;

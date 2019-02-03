@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
-using SecureID.Params;
+using SecureIdBlockchain.Params;
 
-namespace SecureID.core
+namespace SecureIdBlockchain.core
 {
     /// <summary>
     /// CORE: SecureID Blockchain
